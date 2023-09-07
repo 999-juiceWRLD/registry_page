@@ -8,6 +8,12 @@ export const Form: React.FunctionComponent = () => {
                     </label>
                     <input type="text" className="shadow border text-gray-700 p-1 text-sm focus:outline-none focus:shadow-outline" />
                 </div>
+                <div className="mb-6">
+                    <label htmlFor="" className="block text-gray-700 text-sm font-bold mb-2">
+                        Password
+                    </label>
+                    <input type="password" className="shadow border text-gray-700 p-1 text-sm focus:outline-none focus:shadow-outline" />
+                </div>
             </form>
         </div>
     );
