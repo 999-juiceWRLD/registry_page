@@ -1,3 +1,5 @@
+import { Button } from "./Button.component";
+
 export const Form: React.FunctionComponent = () => {
     return (
         <div className="w-full max-w-xs">
@@ -14,6 +16,7 @@ export const Form: React.FunctionComponent = () => {
                     </label>
                     <input type="password" className="shadow border text-gray-700 p-1 text-sm focus:outline-none focus:shadow-outline" />
                 </div>
+                <Button />
             </form>
         </div>
     );
