@@ -15,6 +15,7 @@ export default {
       emerald: colors.emerald,
       indigo: colors.indigo,
       yellow: colors.yellow,
+      blue: colors.blue,
       'dark-blue-plane': '#053B50',
       'light-blue-border': '#64CCC5'
     },
