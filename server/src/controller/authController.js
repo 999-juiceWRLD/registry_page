@@ -2,7 +2,7 @@ const { SECRET_KEY, TOKEN_EXPIRY_TIME } = require('../../server')
 const jwt = require('jsonwebtoken')
 const User = require('../models/User.model')
 const bcrypt = require('bcrypt')
-
+const handleErrors = require('./errorHandler')
 
 const createToken = (userID) => {
     return jwt.sign({ userID }, SECRET_KEY, { expiresIn: TOKEN_EXPIRY_TIME });
@@ -36,6 +36,7 @@ const signUp = async (req, res) => {
             message: 'user created successfully.'
         });
     } catch (err) {
+        handleErrors(err);
         return res.status(404).json({
             message: 'ERR CATCHED: ' + err.message
         });
@@ -57,6 +58,7 @@ const logIn = async (req, res) => {
             jwtCookie: token
         });
     } catch (err) {
+        handleErrors(err);
         return res.status(404).json({
             message: 'ERR CATCHED: ' + err.message
         });
