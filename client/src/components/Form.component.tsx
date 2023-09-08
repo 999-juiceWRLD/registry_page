@@ -9,11 +9,8 @@ export const Form: React.FunctionComponent<IFormData> = () => {
     
     // don't forget onChange and onClick
 
-    const onChange = (e) => {
-        setValues({
-          ...values,
-          [e.target.name]: e.target.value
-        }); 
+    const changeValues = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setValues({ ...values, [e.target.name]: e.target.value }); 
     };
 
     const log = () => {
@@ -28,13 +25,13 @@ export const Form: React.FunctionComponent<IFormData> = () => {
                     <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2">
                         Email Address
                     </label>
-                    <input type="text" name="emailAddress" onChange={onChange} className="shadow border text-gray-700 p-1 text-sm focus:outline-none focus:shadow-outline" />
+                    <input type="text" name="emailAddress" onChange={changeValues} className="shadow border text-gray-700 p-1 text-sm focus:outline-none focus:shadow-outline" />
                 </div>
                 <div className="mb-6">
                     <label className="block text-gray-700 text-sm font-bold mb-2">
                         Password
                     </label>
-                    <input type="password" name="password" onChange={onChange} className="shadow border text-gray-700 p-1 text-sm focus:outline-none focus:shadow-outline" />
+                    <input type="password" name="password" onChange={changeValues} className="shadow border text-gray-700 p-1 text-sm focus:outline-none focus:shadow-outline" />
                 </div>
                 <Button buttonType="button" onClick={log}/>
             </form>
