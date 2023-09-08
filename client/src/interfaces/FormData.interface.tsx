@@ -1,4 +1,4 @@
 export interface IFormData {
-    emailAddress: string;
+    email: string;
     password: string;
 }
