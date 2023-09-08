@@ -16,9 +16,9 @@ app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors(
     {
-        origin: ['*'],
+        origin: 'http://localhost:8000',
         methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
-        credentials: false
+        credentials: true
     }
 ));
 
@@ -33,7 +33,7 @@ app.use(cors(
     }
 })();
 
-app.use('/', router);
+app.use('/api', router);
 
 app.get('/', (req, res) => {
     res.send('ayyo wassup');
