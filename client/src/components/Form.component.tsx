@@ -5,7 +5,7 @@ import { Email } from "./Email.component";
 import { Password } from "./Password.component";
 import axios from "axios";
 
-export const Form: React.FunctionComponent<IFormData> = () => {
+export const Form: React.FunctionComponent = () => {
     
     const [values, setValues] = useState<IFormData>({ email: '', password: '' });
     
