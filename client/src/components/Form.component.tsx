@@ -1,8 +1,8 @@
 import { Button } from "./Button.component";
 import { useState } from "react";
 import { IFormData } from "../interfaces/FormData.interface";
-import { Email } from "./Email.component";
-import { Password } from "./Password.component";
+import { Email } from "./form-tools/Email.component";
+import { Password } from "./form-tools/Password.component";
 import axios from "axios";
 
 export const Form: React.FunctionComponent = () => {
@@ -20,21 +20,12 @@ export const Form: React.FunctionComponent = () => {
             .catch(err => { console.log(err) });
     }
 
-    // const log = () => {
-    //     console.log(values);
-    // }
-
     return (
         <div className="w-full max-w-xs">
             <form action="" className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                 <Email changeValues={changeValues} />
                 <Password changeValues={changeValues} />
-                {/* <div className="mb-6">
-                    <label className="block text-gray-700 text-sm font-bold mb-2">
-                        Password
-                    </label>
-                    <input type="password" name="password" onChange={changeValues} className="shadow border text-gray-700 p-1 text-sm focus:outline-none focus:shadow-outline" />
-                </div> */}
+
                 <Button buttonType="button" onClick={dataRequest}/>
             </form>
         </div>
