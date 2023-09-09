@@ -6,11 +6,13 @@ import {
   RouterProvider
 } from 'react-router-dom'
 import './index.css'
+import { ErrorPage } from './components/error/ErrorPage.component.tsx'
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <App />
+    element: <App />,
+    errorElement: <ErrorPage /> 
   }
 ]);
 
